@@ -1,3 +1,6 @@
+# Assignment 1
+# Econ 8310 - Business Forecasting
+
 This assignment will make use of the models covered in Lessons 1 to 3. Models include:
 
 - Ordinary Least Squares (OLS) models
@@ -12,7 +15,7 @@ Your job will be to forecast the number of taxi trips requested during each hour
 - Storing your models to make predictions on new data
 - Making reasonable predictions based on the data provided
 
-The data is available at [https://github.com/dustywhite7/Econ8310/raw/master/AssignmentData/Assignment2/assignment2.csv](https://github.com/dustywhite7/Econ8310/raw/master/AssignmentData/Assignment2/assignment2.csv)
+The data is available at [https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv](https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv)
 
 To complete this assignment, your code will need to contain the following:
 
@@ -22,7 +25,7 @@ To complete this assignment, your code will need to contain the following:
     - A fitted model named `modelFit`. This should be a model instance capable of generating forecasts by incorporating new data in the same shape as the data used in part (1).
     - A vector of forecasts using the data from the test period named `pred`. You should predict each hour in January of the year following our training data (for 744 total predicted hours).
     
-To make predictions, you can use the test data set found at the following link: [https://github.com/dustywhite7/Econ8310/raw/master/AssignmentData/Assignment2/assignment2test.csv](https://github.com/dustywhite7/Econ8310/raw/master/AssignmentData/Assignment2/assignment2test.csv)
+To make predictions, you can use the test data set found at the following link: [https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_test.csv](https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_test.csv)
 
 Put all code necessary to complete this assignment into the file called `assignment1.ipynb` found in the file tree.
 
