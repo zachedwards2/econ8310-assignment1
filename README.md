@@ -27,7 +27,7 @@ To complete this assignment, your code will need to contain the following:
     
 To make predictions, you can use the test data set found at the following link: [https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_test.csv](https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_test.csv)
 
-Put all code necessary to complete this assignment into the file called `assignment1.ipynb` found in the file tree.
+While the .ipynb file is a notebook for you to use as you experiment, you must put **all code necessary to complete this assignment into the file called `assignment1.py` found in the file tree**. If your notebook can be run as a script (ie - runs without errors when you restart the kernel and run all cells), then you can simply export your notebook to a .py file and overwrite `assignment1.py`.
 
 **Note:** While all models from weeks 1 to 3 are available to you, they may not all be good fits to the data. I recommend considering the data carefully, then choosing 2-3 models to try. See which models seem to perform best on this data, and implement the best choice for the final submission of the project.
 
