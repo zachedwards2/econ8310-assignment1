@@ -1,5 +1,5 @@
 # Assignment 1
-# Econ 8310 - Business Forecasting
+## Econ 8310 - Business Forecasting
 
 This assignment will make use of the models covered in Lessons 1 to 3. Models include:
 
