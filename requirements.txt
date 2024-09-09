@@ -1,0 +1,8 @@
+statsmodels 
+pandas 
+numpy 
+pygam 
+prophet 
+ipynb
+numpy
+scipy
