@@ -3,9 +3,7 @@
 
 This assignment will make use of the models covered in Lessons 1 to 3. Models include:
 
-- Ordinary Least Squares (OLS) models
-- Logistic Regression models
-- AutoRegressive Integrated Moving Average (ARIMA) models
+- Vector AutoRegressive Moving Average (VARMA) Models
 - Generalized Additive Models (GAMs)
 - Exponential Smoothing models
 
