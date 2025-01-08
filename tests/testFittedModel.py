@@ -8,8 +8,8 @@ import pygam
 from statsmodels.tsa.holtwinters import ExponentialSmoothing as ES
 import prophet
 import statsmodels.tsa.holtwinters as hw
-from statsmodels.regression.linear_model import RegressionResultsWrapper
-from statsmodels.tsa.arima.model import ARIMAResultsWrapper
+from statsmodels.tsa.statespace.varmax import VARMAXResultsWrapper
+from statsmodels.tsa.vector_ar.var_model import VARResultsWrapper
 
 # Import your code from parent directory
 import os
@@ -26,7 +26,7 @@ from assignment1 import model, modelFit, pred
 
 class testCases(unittest.TestCase):
     def testFittedModel(self):
-        if isinstance(modelFit, RegressionResultsWrapper) or isinstance(modelFit, ARIMAResultsWrapper) or isinstance(modelFit, hw.results.HoltWintersResultsWrapper):
+        if isinstance(modelFit, VARResultsWrapper) or isinstance(modelFit, VARMAXResultsWrapper) or isinstance(modelFit, hw.results.HoltWintersResultsWrapper):
             self.assertTrue(True)
         elif hasattr(modelFit, '_is_fitted'):
             if modelFit._is_fitted:
