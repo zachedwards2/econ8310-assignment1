@@ -8,8 +8,8 @@ import pygam
 from statsmodels.tsa.holtwinters import ExponentialSmoothing as ES
 import prophet
 import statsmodels.tsa.holtwinters as hw
-from statsmodels.regression.linear_model import OLS
-from statsmodels.tsa.arima.model import ARIMA
+from statsmodels.tsa.vector_ar.var_model import VAR
+from statsmodels.tsa.statespace.varmax import VARMAX
 
 # Import your code from parent directory
 import os
@@ -26,4 +26,4 @@ from assignment1 import model, modelFit, pred
 
 class testCases(unittest.TestCase):
     def testValidModel(self):
-        self.assertTrue(isinstance(model, OLS) or isinstance(model, ARIMA) or isinstance(model, ES) or isinstance(model, pygam.pygam.LinearGAM) or isinstance(model, prophet.forecaster.Prophet), "Make sure that you are using a model\ncovered in class in the variable 'model'.")
+        self.assertTrue(isinstance(model, VAR) or isinstance(model, VARMAX) or isinstance(model, ES) or isinstance(model, pygam.pygam.LinearGAM) or isinstance(model, prophet.forecaster.Prophet), "Make sure that you are using a model\ncovered in class in the variable 'model'.")
