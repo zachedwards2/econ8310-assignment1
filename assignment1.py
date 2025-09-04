@@ -1,0 +1,64 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMv722eyv10oKwFKcc11MML",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/zachedwards2/econ8310-assignment1/blob/main/assignment1.py\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "from statsmodels.tsa.holtwinters import ExponentialSmoothing as ES\n",
+        "\n",
+        "# Load training data\n",
+        "train_url = \"https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv\"\n",
+        "train_data = pd.read_csv(train_url)\n",
+        "\n",
+        "# Convert Timestamp to datetime\n",
+        "train_data['Timestamp'] = pd.to_datetime(train_data['Timestamp'])\n",
+        "\n",
+        "# Set series\n",
+        "trips = train_data['trips']\n",
+        "trips.index = train_data['Timestamp']\n",
+        "trips.index.freq = 'h'  # hourly frequency\n",
+        "\n",
+        "# Define the Exponential Smoothing model\n",
+        "model = ES(trips, trend=None, seasonal=None)  # simple ES, no trend, no seasonality\n",
+        "\n",
+        "# Fit the model\n",
+        "modelFit = model.fit()\n",
+        "\n",
+        "# Forecast next 744 hours (January)\n",
+        "pred = modelFit.forecast(steps=744)\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "TkX5jDFJ5inb"
+      },
+      "execution_count": 40,
+      "outputs": []
+    }
+  ]
+}
