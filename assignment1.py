@@ -26,7 +26,7 @@ model = LinearGAM(
 
 modelFit = model.fit(X_train, y_train)
 
-pred_dates = pd.date_range(start='2019-01-01 00:00:00', end='2019-01-31 23:00:00', freq='H')
+pred_dates = pd.date_range(start='2019-01-01 00:00:00', end='2019-01-31 23:00:00', freq='h')
 pred_df = pd.DataFrame()
 pred_df['datetime'] = pred_dates
 pred_df['hour'] = pred_df['datetime'].dt.hour
@@ -35,4 +35,32 @@ pred_df['day_of_year'] = pred_df['datetime'].dt.dayofyear
 
 X_pred = pred_df[['hour','day_of_week','day_of_year']].values
 pred = modelFit.predict(X_pred)
+fig = go.Figure()
+
+
+fig.add_trace(go.Scatter(
+    x=train_2018['datetime'],
+    y=y_train,
+    mode='lines',
+    name='Actual - 2018',
+    line=dict(color='red')
+))
+
+fig.add_trace(go.Scatter(
+    x=pred_df['datetime'],
+    y=pred,
+    mode='lines',
+    name='Predicted - Jan 2019',
+    line=dict(color='blue')
+))
+
+fig.update_layout(
+    title='Hourly NYC Taxi Trips: 2018 Actual vs 2019 Predicted January',
+    xaxis_title='Datetime',
+    yaxis_title='Number of Trips',
+    xaxis=dict(rangeslider=dict(visible=True)),
+    template='plotly_white'
+)
+
+fig.show()
 
